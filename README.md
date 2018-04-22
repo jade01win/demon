@@ -1,7 +1,7 @@
 # demon
 fuck these demons, I am so triggered.
 
-Encrypts every file in your Home and sends the key to a remote server
+Encrypt every file in your Home and send the key to a remote server
 
 ***
 
