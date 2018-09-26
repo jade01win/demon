@@ -1,5 +1,5 @@
 # demon
-fuck these demons, I am so triggered.
+ransomware, made for a demo on ransomware awareness and how easy it is to do
 
 Encrypt every file in your Home and send the key to a remote server
 
