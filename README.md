@@ -1,3 +1,5 @@
+![alt text](./example.png)
+
 # demon
 ransomware, made for a demo on ransomware awareness and how easy it is to do
 
