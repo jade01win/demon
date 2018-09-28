@@ -29,24 +29,25 @@ class MainWindow(Tk):
         self.options['port'].set(8989)
 
         # Label Frame
-        logo = LabelFrame(self, text = 'Logo', relief = GROOVE, labelanchor = 'nw', width = 950, height = 200)
-        logo.grid(row = 0, column = 0, columnspan = 4)
-        logo.grid_propagate(0)
+        #logo = LabelFrame(self, text = 'Logo', relief = GROOVE, labelanchor = 'nw', width = 950, height = 200)
+        #logo.grid(row = 0, column = 0, columnspan = 4)
+        #logo.grid_propagate(0)
 
         # Canvas for image
-        canvas = Canvas(logo, highlightthickness=0, height = 150, width = 500)
-        canvas.grid(row=0, column=0)
+        canvas = Canvas(self, highlightthickness=0, height = 150, width = 500)
+        canvas.grid(row=0, column=0, columnspan = 4)
 
         photo = PhotoImage(file='logo.png')
         #photo = photo.zoom(2)
         photo = photo.subsample(4)
-        label = Label(logo, image=photo)
+        label = Label(self, image=photo)
         label.image = photo # keep a reference!
         label.grid(row = 0, column = 0)
 
-        label2 = Label(logo, image=photo)
+        label2 = Label(self, image=photo)
         label2.image = photo # keep a reference!
-        label2.grid(row = 0, column = 1)
+        label2.grid(row = 0, column = 3)
+
 
         # Log Frame
         result = LabelFrame(self, text = 'Log', relief = GROOVE)
