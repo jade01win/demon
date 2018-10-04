@@ -197,7 +197,10 @@ Zeznzo
             except KeyboardInterrupt:
                 print('Closed...\n\n')
 
-        start_thread()
+        if platform.system() == 'Windows':
+            pass
+        else:
+            start_thread()
 
 def getlocalip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
