@@ -8,7 +8,7 @@ Encrypt every file in your Home and send the key to a remote server
 
 ***
 # Demo
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=5PlHs4dGojA" target="_blank"><img src="http://img.youtube.com/vi/5PlHs4dGojA/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=5IBjZm4gE7E" target="_blank"><img src="http://img.youtube.com/vi/5IBjZm4gE7E/0.jpg" 
 alt="demonware ransomware demo" width="240" height="180" border="10" /></a>
 ***
 
