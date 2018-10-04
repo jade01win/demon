@@ -1,4 +1,5 @@
 ![alt text](./example.png)
+![alt text](./example2.JPEG)
 
 # demon
 ransomware, made for a demo on ransomware awareness and how easy it is to do
