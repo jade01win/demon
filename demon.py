@@ -246,8 +246,7 @@ def get_target():
     # Encrypt on this location
     # Users home on Linux
     if platform == 'Linux':
-        #target = '/home/' + getpass.getuser() + '/'
-        target = '/home/lv-laptop/Documents/directories/programmeren/python/demonware/test' + '/'
+        target = '/home/' + getpass.getuser() + '/'
         return target
 
     # Users home on Windows
