@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 '''
 To compile this to EXE, do:
-pyinstaller.exe -F -i icon.ico --hidden-import tkinter --hidden-import tkinter.ttk --hidden-import ttkthemes ui_server.py
+pyinstaller.exe -F -w -i icon.ico --hidden-import tkinter --hidden-import tkinter.ttk --hidden-import ttkthemes ui_server.py
+
+For MacOS:
+pyinstaller -F -w -i icon.ico --hidden-import tkinter --hidden-import tkinter.ttk --hidden-import ttkthemes ui_server.py
 '''
-import os, sys, subprocess, threading, time, datetime, socket, select
+import os, sys, subprocess, threading, time, datetime, socket, select, base64, PIL.Image, PIL.ImageTk
+#from PIL import ImageTk, Image
+from io import BytesIO
 from tkinter import *
 from tkinter.ttk import *
 from ttkthemes import ThemedStyle
@@ -273,7 +278,9 @@ wBaOrQ6whWOrA2zREPk/NN3VG75jODwAAAAASUVORK5CYII='''
         canvas.grid(row=0, column=0, columnspan = 4)
 
         #photo = PhotoImage(file='logo2.png')
-        photo = PhotoImage(data=photo_code)
+        #photo = PhotoImage(data=photo_code)
+        #photo = ImageTk.PhotoImage(Image.open(data = photo_code))
+        photo = PIL.ImageTk.PhotoImage(PIL.Image.open(BytesIO(base64.b64decode(photo_code))))
         #photo = photo.zoom(2)
         #photo = photo.subsample(1)
         label = Label(self, image=photo)
@@ -359,7 +366,8 @@ wBaOrQ6whWOrA2zREPk/NN3VG75jODwAAAAASUVORK5CYII='''
                                 system = data.split('$')[1]
                                 key = data.split('$')[2]
 
-                                self.options['log'].insert('1.0', '[%s %s] %s %s %s %s\n' % (time.strftime('%d/%m/%Y'), time.strftime('%X'), ip.ljust(20), local.ljust(20), system.ljust(20), key), 'yellow')
+                                self.options['log'].insert(END, '\n[%s %s] %s %s %s %s\n' % (time.strftime('%d/%m/%Y'), time.strftime('%X'), ip.ljust(20), local.ljust(20), system.ljust(20), key), 'yellow')
+                                self.options['log'].see(END)
 
                             else:
                                 if sock in socket_list:
