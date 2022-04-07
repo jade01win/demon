@@ -156,24 +156,24 @@ vV4t+0UE/G5fAN2ccz9Ug6PdAAAAAElFTkSuQmCC'''
 
         #self.bind("<Escape>", self.exit) # Press ESC to quit app
         message = '''
-Seems like you got hit by DemonWare ransomware!
+            It seems you have been hit by DemonWare Ransomware!
 
-Don't Panic, you get have your files back!
+            Don't panic, you can recover your files!
 
-DemonWare uses a basic encryption script to lock your files.
-This type of ransomware is known as CRYPTO.
-You'll need a decryption key in order to unlock your files.
+            DemonWare uses a simple encryption script to lock your files.
+            This type of ransomware is known as CRYPTO.
+            You'll need a decryption key in order to unlock your files.
 
-Your files will be deleted when the timer runs out, so you better hurry.
-You have 10 hours to find your key
+            Your files will be deleted when the timer expires, so you should hurry.
+            You have 10 hours to find your key.
 
-C'mon, be glad I don't ask for payment like other ransomware.
+            C'mon, be glad I don't ask for payment like other ransomware.
 
-Please visit: https://keys.zeznzo.org and search for your IP/hostname to get your key.
+            Please visit: https://keys.zeznzo.org and search for your IP/hostname to get your key.
 
-Kind regards,
+            Kind regards,
 
-Zeznzo
+            Zeznzo
         '''
         Label(self, text = message, font='Helvetica 16 bold', foreground = 'white', background = 'red').grid(row = 0, column = 0, columnspan = 4)
 
